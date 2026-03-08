@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>	<!-- Boilerplate code -->
+	
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	             version="2.0">
+		
+	<persistence-unit name="PU01">	<!-- should be unique; 1 persistent tag unit contains the metadata of a single DB -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>	<!-- maps the (key = name, value) pair -->
+		
+		<property name="javax.persistence.jdbc.driver"
+		          value="org.postgresql.Driver"/>	<!-- PostgreSQL Driver -->
+		
+		<property name="javax.persistence.jdbc.url"
+		          value="jdbc:postgresql://localhost:5432/assignmentdb"/>	<!-- PostgreSQL DB url -->
+		
+		<property name="javax.persistence.jdbc.user"
+				  value="postgres"/>	<!-- PostgreSQL username -->
+		
+		<property name="javax.persistence.jdbc.password"
+				  value="Sudutta#2026"/>	<!-- PostgreSQL password -->
+		
+		<property name="hibernate.hbm2ddl.auto"
+				  value="update"/>	<!-- For 'create', everytime it will drop the table and create it -->
+				  					<!-- For 'update', it will keep the previously-made table and update -->
+		
+		<property name="hibernate.show_sql"
+				  value="true"/>	<!-- For JDBC driver, it will show the o/p in console in a single line -->
+		
+		<property name="hibernate.format_sql"
+				  value="true"/>	<!-- formats the output -->
+		
+		<property name="hibernate.dialect"
+		          value="org.hibernate.dialect.PostgreSQLDialect"/>	<!-- 'dialect' controls the version compatibility-->
+		</properties>
+	</persistence-unit>
+	 
+</persistence>
